@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A minimal Electron application",
   "main": "main.js",
+  "icon": "favicon.ico",
   "scripts": {
     "start": "npm run build-js && npm run start-electron",
     "start-electron": "electron main.js -s ENVIRONMENT=web,webview",
@@ -29,6 +30,7 @@
   },
   "dependencies": {
     "express": "^4.17.1",
-    "web-ifc-viewer": "^1.0.105"
+    "three": "^0.135.0",
+    "web-ifc-viewer": "^1.0.151"
   }
 }
