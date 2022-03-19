@@ -45,8 +45,9 @@ export class IfcService {
     this.onSelectActions.push(action);
   }
 
-  loadIfc(file: File) {
-    this.ifcViewer?.loadIfc(file, true);
+  async loadIfc(file: File) {
+    await this.ifcViewer?.loadIfc(file, true);
+    this.ifcViewer?
   }
 
   select(modelID: number, expressID: number, pick = true) {
