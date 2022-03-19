@@ -1,6 +1,7 @@
 import React, { useEffect, createRef, useState } from 'react';
 
 import { styled, useTheme, Theme, CSSObject } from '@mui/material/styles';
+import { Color } from 'three';
 import {
   Alert,
   Backdrop,
@@ -114,14 +115,13 @@ function App() {
   useEffect(() => {
     if (ifcContainer.current) {
       const container = ifcContainer.current;
-      const ifcViewer = new IfcViewerAPI({ container });
+      const ifcViewer = new IfcViewerAPI({ container, backgroundColor: new Color(0xffffff) });
       ifcViewer.addAxes();
       ifcViewer.addGrid();
       ifcViewer.IFC.loader.ifcManager.applyWebIfcConfig({
         COORDINATE_TO_ORIGIN: true,
         USE_FAST_BOOLS: false
       });
-      ifcViewer.IFC.loader.manager
       setViewer(ifcViewer);
     }
   }, []);
