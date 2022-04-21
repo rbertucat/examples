@@ -6,7 +6,6 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { ContextMenuComponent } from './context-menu/context-menu.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatTreeModule } from '@angular/material/tree';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -26,7 +25,6 @@ import {MatTooltipModule} from '@angular/material/tooltip';
   declarations: [
     AppComponent,
     ToolbarComponent,
-    ContextMenuComponent,
     SpatialTreeComponent,
     ClickStopPropagationDirective,
     PropertyMenuComponent,

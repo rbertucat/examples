@@ -29,8 +29,8 @@ export class IfcService {
       preselectMaterial,
       selectMaterial
     });
-    this.ifcViewer.addAxes();
-    this.ifcViewer.addGrid();
+    this.ifcViewer.axes.setAxes();
+    this.ifcViewer.grid.setGrid();
     this.ifcViewer.IFC.setWasmPath('assets/');
   }
 
@@ -47,7 +47,6 @@ export class IfcService {
 
   async loadIfc(file: File) {
     await this.ifcViewer?.loadIfc(file, true);
-    this.ifcViewer?
   }
 
   select(modelID: number, expressID: number, pick = true) {
