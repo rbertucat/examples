@@ -116,13 +116,19 @@ function App() {
     if (ifcContainer.current) {
       const container = ifcContainer.current;
       const ifcViewer = new IfcViewerAPI({ container, backgroundColor: new Color(0xffffff) });
-      ifcViewer.addAxes();
-      ifcViewer.addGrid();
+      ifcViewer.axes.setAxes();
+      ifcViewer.grid.setGrid();
       ifcViewer.IFC.loader.ifcManager.applyWebIfcConfig({
         COORDINATE_TO_ORIGIN: true,
         USE_FAST_BOOLS: false
       });
       setViewer(ifcViewer);
+    }
+
+    return () => {
+      if (viewer) {
+        viewer.dispose();
+      }      
     }
   }, []);
 
@@ -150,7 +156,7 @@ function App() {
 
   const toggleClippingPlanes = () => {
     if (viewer) {
-      viewer.toggleClippingPlanes();
+      viewer.clipper.toggle();
       if (viewer.clipper.active) {
         setClippingPaneSelected(true);
       } else {
