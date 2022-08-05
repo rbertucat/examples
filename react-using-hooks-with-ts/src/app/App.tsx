@@ -142,7 +142,9 @@ function App() {
 
       // load file
       const model = await viewer.IFC.loadIfc(file, true, ifcOnLoadError);
-      await viewer.shadowDropper.renderShadow(model.modelID);
+      if (model) {
+        await viewer.shadowDropper.renderShadow(model.modelID);
+      }
 
       // update information
       setSnackbarOpen(true);
